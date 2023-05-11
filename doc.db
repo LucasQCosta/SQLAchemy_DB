@@ -1,0 +1,12 @@
+create database brainstorm;
+use brainstorm;
+create table usuario (
+	id_usuario int unsigned zerofill auto_increment not null,
+	nome varchar(255) not null,
+	email varchar(255) not null UNIQUE,
+	constraint pk_id_usuario primary key (id_usuario)
+) engine = innodb;
+
+INSERT INTO usuario (nome, email) VALUES ('Alice', 'alice@example.com');
+INSERT INTO usuario (nome, email) VALUES ('Bob', 'bob@example.com');
+INSERT INTO usuario (nome, email) VALUES ('Carol', 'carol@example.com');
