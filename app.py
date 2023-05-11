@@ -90,11 +90,11 @@ def buscar_usuario(id):
         return jsonify({'mensagem': 'Usuário não encontrado!'})
 
 
-@app.route('/delete_user/<int:user_id>', methods=['DELETE'])
+@app.route('/delete_user/<int:user_id>', methods=['GET'])
 def delete_user(user_id):
     # Deletando o usuário do banco de dados
     cur = mysql.connection.cursor()
-    cur.execute("DELETE FROM users WHERE id=%s", (user_id,))
+    cur.execute("DELETE FROM usuario WHERE id_usuario=%s", (user_id,))
     mysql.connection.commit()
     cur.close()
 
